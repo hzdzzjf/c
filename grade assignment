@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(){
+	int grade,KUN,times,i,ni_gan_ma;
+	char rate;
+	printf("是否开始分数评级?回答:0,继续;1,停止:");
+	scanf("%d",&KUN);
+	if(KUN==0){
+		printf("您希望进行几次分数评级?请输入数字:\n");
+		scanf("%d",&times);
+		printf("提示:如果您想中途退出,请输入-1,否则按任意数字继续.\n\n");
+		for(i=1;i<=times;i++){
+			scanf("%d",&ni_gan_ma);
+			if(ni_gan_ma==-1){
+				goto out;
+			}else{
+				printf("这是第%d次评级,请输入分数(一百分制):",i);
+				scanf("%d",&grade);
+				if(grade>=90){
+					rate='A';
+				}else if(grade>=80){
+					rate='B';
+				}else if(grade>=70){
+					rate='C';
+				}else if(grade>=60){
+					rate='D';
+				}else{
+					rate='E';
+				}
+			}
+			printf("评级为:%c\n\n",rate);		
+		}
+	}else{
+		out:
+		printf("再见!");
+	}
+	return 0;
+}
