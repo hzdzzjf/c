@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+	int i,N,x=1;
+	printf("请输入天数:");
+	scanf("%d",&N);
+	for(i=1;i<N;i++){
+		x=(x+1)*2;
+	}
+	printf("猴子第一天共摘了%d个桃子",x);
+	return 0;
+}
