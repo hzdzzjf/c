@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+	int a,b,i,t;
+	printf("请输入筛选素数的范围(示范:23 45):");
+	scanf("%d %d",&a,&b);
+	for(i=a;i<=b;i++){
+		if(i==2){
+			printf("2\n");
+		}
+		for(t=2;t<i;t++){
+			if(i%t==0){
+				break;
+			}else{
+				if(t==i-1){
+					printf("%d\n",i);	
+				}
+			}
+		}
+	}
+	return 0;
+}
